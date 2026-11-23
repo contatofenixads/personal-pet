@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+:root{--oliva:#C9A24A;--oliva-esc:#8F6B22;--musgo:#1A1714;--musgo-esc:#100E0C;--creme:#F8F3EA;--areia:#EFE5D3;--cafe:#1A1714;--vinho:#B9786A;--ouro:#E3C77E}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1920px;overflow:hidden;font-family:"DM Sans",sans-serif;color:var(--cafe);background:var(--creme)}
+.c{position:relative;width:1080px;height:1920px;overflow:hidden;background:
+ radial-gradient(700px 600px at 85% 30%,rgba(201,162,74,.26),transparent 70%),
+ radial-gradient(600px 500px at 5% 50%,rgba(234,226,213,1),transparent 70%),
+ linear-gradient(180deg,#F9F4EB 0%,#F1E8D7 60%,#EADFC9 100%)}
+.serif{font-family:Lora,Georgia,serif}
+.topo{position:absolute;top:200px;left:0;right:0;text-align:center}
+.kick{display:inline-flex;align-items:center;gap:14px;font-size:24px;font-weight:600;letter-spacing:.06em;color:var(--oliva-esc);text-transform:uppercase}
+.kick svg{width:44px;height:26px}
+h1{font:500 70px/1.04 Lora,Georgia,serif;color:var(--musgo);margin-top:20px;letter-spacing:-.01em}
+h1 i{color:var(--oliva-esc)}
+.sub{font-size:26px;color:#5a524a;margin-top:14px}
+/* telefones */
+.fones{position:absolute;top:478px;left:0;right:0;height:690px}
+.fone{position:absolute;width:296px;height:626px;border-radius:50px;background:#151515;padding:13px;box-shadow:0 60px 90px -40px rgba(20,18,16,.6),0 0 0 2px #2c2c2c inset,0 0 0 3px #3a3a3a}
+.fone::before{content:"";position:absolute;right:-5px;top:180px;width:5px;height:90px;border-radius:0 4px 4px 0;background:#2a2a2a}
+.tela{width:100%;height:100%;border-radius:38px;overflow:hidden;position:relative;background:#fff}
+.tela img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ilha{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:104px;height:30px;border-radius:20px;background:#0b0b0b;z-index:2}
+.f1{left:200px;top:20px;transform:rotate(-7deg);z-index:1}
+.f2{right:200px;top:46px;transform:rotate(6deg);z-index:2}
+.rot{position:absolute;z-index:3;display:flex;align-items:center;gap:12px;background:#fff;border-radius:999px;padding:14px 26px 14px 14px;box-shadow:0 20px 40px -18px rgba(20,18,16,.45);font-size:24px;font-weight:600;color:var(--musgo)}
+.rot i{width:44px;height:44px;border-radius:50%;background:var(--oliva);color:#1A1714;display:grid;place-items:center}
+.rot svg{width:24px;height:24px}
+.r1{left:96px;top:520px}
+.r2{right:84px;top:4px}
+.ramo{position:absolute;color:var(--oliva);opacity:.7}
+.ramo path,.ramo use{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
+/* preços */
+.precos{position:absolute;top:1160px;left:60px;right:60px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pc{background:#fff;border-radius:28px;padding:20px 26px 20px;box-shadow:0 24px 50px -30px rgba(20,18,16,.5)}
+.pc h3{font:500 32px/1.1 Lora,serif;color:var(--musgo)}
+.pc .av{margin-top:14px;font-size:22px;color:#7a7065}
+.pc .av s{color:#7a7065}
+.pc .por{display:flex;align-items:baseline;gap:8px;margin-top:2px;color:var(--oliva-esc)}
+.pc .por small{font-size:22px;font-weight:600}
+.pc .por b{font:600 60px/1 "DM Sans";letter-spacing:-.02em}
+.pc .tag{display:inline-block;margin-top:10px;font-size:18px;font-weight:600;color:#1A1714;background:var(--oliva);padding:5px 14px;border-radius:99px}
+.combo{border:2px solid rgba(201,162,74,.55);position:absolute;top:1356px;left:60px;right:60px;height:256px;border-radius:36px;background:linear-gradient(120deg,var(--musgo-esc),#221D17 55%,#4A3B1E);color:var(--creme);padding:20px 40px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,18,16,.7)}
+.combo .ramo{color:#E3C77E;opacity:.35;right:-40px;bottom:-30px;width:340px}
+.cl{font-size:24px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#E3C77E}
+.cmeio{display:flex;align-items:flex-end;justify-content:space-between;margin-top:8px}
+.de{font-size:28px;color:#cfc6b4}.de s{text-decoration-thickness:2px}
+.valor{display:flex;align-items:baseline;gap:10px}
+.valor small{font-size:32px;font-weight:600}
+.valor b{font:700 96px/1 "DM Sans";letter-spacing:-.03em;color:#fff}
+.econ{background:var(--ouro);color:var(--musgo-esc);font-size:22px;font-weight:700;padding:10px 18px;border-radius:16px;margin-bottom:18px;text-align:center;line-height:1.15}
+.parc{margin-top:6px;font-size:30px;color:#efe7d6;display:flex;align-items:center;gap:12px}
+.parc b{color:#fff;font-size:36px}
+.parc svg{width:34px;height:34px;color:#E3C77E}
+.selos{position:absolute;top:1634px;left:0;right:0;display:flex;justify-content:center;gap:16px}
+.sel{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--oliva);color:var(--musgo);font-size:25px;font-weight:700;padding:14px 26px;border-radius:999px}
+.sel svg{width:28px;height:28px;color:var(--oliva)}
+.sel.cheio{background:var(--musgo);border-color:var(--musgo);color:#E3C77E}.sel.cheio svg{color:#E3C77E}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <defs><g id="pata"><path d="M0 3.2c-3.4 0-6 2.3-6 4.7 0 1.7 1.5 2.6 3 2.6 1.1 0 2-.6 3-.6s1.9.6 3 .6c1.5 0 3-.9 3-2.6C6 5.5 3.4 3.2 0 3.2Z"/><path d="M-8.4 .4a1.9 2.4 -18 1 0 3.8 0a1.9 2.4 -18 1 0-3.8 0Z"/><path d="M-4.4 -3.4a1.9 2.5 -6 1 0 3.8 0a1.9 2.5 -6 1 0-3.8 0Z"/><path d="M.6 -3.4a1.9 2.5 6 1 0 3.8 0a1.9 2.5 6 1 0-3.8 0Z"/><path d="M4.6 .4a1.9 2.4 18 1 0 3.8 0a1.9 2.4 18 1 0-3.8 0Z"/></g></defs>
+ <symbol id="ramo" viewBox="0 0 320 120"><path stroke-dasharray="3 6" d="M6 112C70 96 150 70 210 42C250 24 286 12 314 8" style="opacity:.6"/><use href="#pata" transform="translate(30 98) rotate(68) scale(.9)"/><use href="#pata" transform="translate(70 104) rotate(68) scale(.9)"/><use href="#pata" transform="translate(112 78) rotate(62)"/><use href="#pata" transform="translate(152 82) rotate(62)"/><use href="#pata" transform="translate(196 52) rotate(58) scale(1.05)"/><use href="#pata" transform="translate(234 50) rotate(58) scale(1.05)"/><use href="#pata" transform="translate(276 20) rotate(66) scale(1.1)"/></symbol>
+ <symbol id="i-ramo" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#pata" transform="translate(12 15) rotate(-20) scale(.85)"/><use href="#pata" transform="translate(29 9) rotate(-20) scale(.85)"/></symbol>
+ <symbol id="i-site" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></symbol>
+ <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+ <symbol id="i-cartao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19M6 15h4"/></symbol>
+ <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol>
+ <symbol id="i-cifra" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5" stroke-width="1.6"/><path d="M14.5 9c-.4-1-1.3-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.9 2.5 2.2-1.1 2.3-2.5 2.3c-1.3 0-2.2-.6-2.6-1.6M12 6v1.5M12 16.5V18"/></symbol>
+</svg>
+<div class="c">
+  <svg class="ramo" viewBox="0 0 320 120" style="width:420px;left:-120px;top:300px;transform:rotate(-24deg)"><use href="#ramo"/></svg>
+  <svg class="ramo" viewBox="0 0 320 120" style="width:360px;right:-120px;top:1060px;transform:rotate(200deg)"><use href="#ramo"/></svg>
+
+  <div class="topo">
+    <span class="kick"><svg><use href="#i-ramo"/></svg>Presença digital profissional<svg style="transform:scaleX(-1)"><use href="#i-ramo"/></svg></span>
+    <h1 class="serif">Site + Link na Bio<br><i>com a sua identidade</i></h1>
+    <p class="sub">Feitos sob medida, prontos para atrair e converter pelo celular.</p>
+  </div>
+
+  <div class="fones">
+    <div class="fone f1"><div class="ilha"></div><div class="tela"><img src="site.jpg"></div></div>
+    <div class="fone f2"><div class="ilha"></div><div class="tela"><img src="bio.jpg"></div></div>
+    <div class="rot r1"><i><svg><use href="#i-site"/></svg></i>Site Profissional</div>
+    <div class="rot r2"><i><svg><use href="#i-link"/></svg></i>Link na Bio Profissional</div>
+  </div>
+
+  <div class="precos">
+    <div class="pc"><h3>Site Profissional</h3><p class="av">Valor avulso</p><div class="por"><small>R$</small><b>699</b></div></div>
+    <div class="pc"><h3>Link na Bio Profissional</h3><p class="av">Valor avulso</p><div class="por"><small>R$</small><b>299</b></div></div>
+  </div>
+
+  <div class="combo">
+    <svg class="ramo" viewBox="0 0 320 120"><use href="#ramo"/></svg>
+    <div class="cl">Levando os dois</div>
+    <div class="cmeio">
+      <div>
+        <p class="de">de <s>R$ 998</s> por apenas</p>
+        <div class="valor"><small>R$</small><b>798</b></div>
+      </div>
+      <div class="econ">Você economiza<br><span style="font-size:34px">R$ 200</span></div>
+    </div>
+    <p class="parc"><svg><use href="#i-cartao"/></svg>ou <b>10x de R$ 79,80</b> sem juros no cartão</p>
+  </div>
+
+  <div class="selos">
+    <span class="sel cheio"><svg><use href="#i-ok"/></svg>Sem mensalidades</span>
+    <span class="sel"><svg><use href="#i-cifra"/></svg>Pagamento único</span>
+  </div>
+
+</div>
+</body></html>
